@@ -13,11 +13,11 @@ namespace GrpcServiceTestTaskAdvantica.Data
 {
     /*  Памятка по работе с CodeFirst
      *  
-     *  Создание / обновление БД
-     *  удалить папку миграций и бд на сервере
-     *  в консоли ввести
-     *  cd GrpcServiceTestTaskAdvantica
-     *  dotnet ef migrations add Init
+     *  Создание миграций:
+     *      удалить папку миграций и бд на сервере
+     *      в консоли ввести
+     *      cd GrpcServiceTestTaskAdvantica
+     *      dotnet ef migrations add Init
      *  Для обновления БД: 
      *      dotnet ef database update
      *  Для выгрузки запросов: 
@@ -40,7 +40,7 @@ namespace GrpcServiceTestTaskAdvantica.Data
                     new WorkerDataModel
                     {
                         Id = 1,
-                        LastName = "Ивано",
+                        LastName = "Иванов",
                         FirstName = "Иван",
                         MiddleName = "Иванович",
                         Birthday = new DateTime(1990, 1, 4).ToBinary(),

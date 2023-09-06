@@ -114,7 +114,7 @@ namespace WpfTestTaskAdvantica.ViewModels
         /// <summary>
         /// Открытие окна добавления сотрудника
         /// </summary>
-        /// <param name="parameter"></param>
+        /// <param name="parameter">пустой</param>
         private void CreateWorker(object? parameter)
         {
             try
@@ -136,6 +136,10 @@ namespace WpfTestTaskAdvantica.ViewModels
             }
         }
 
+        /// <summary>
+        /// Открытие окна обновления сотрудника
+        /// </summary>
+        /// <param name="parameter">сотрудник</param>
         private void UpdateWorker(object? parameter)
         {
             if (parameter == null)
@@ -161,6 +165,10 @@ namespace WpfTestTaskAdvantica.ViewModels
             }
         }
 
+        /// <summary>
+        /// Удаление записи
+        /// </summary>
+        /// <param name="parameter">сотрудник</param>
         private async void DeleteWorker(object? parameter)
         {
             // если параметр нулл, пользователь не выбрал запись
