@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceTestTaskAdvantica";
+
+package workerapi;
+
+service WorkerIntegration {
+	rpc GetWorkerStream (EmptyMessage) returns (stream WorkerAction);
+	rpc ListWorkers(EmptyMessage) returns (ListMessage);
+	rpc ActionWorkerStream (stream WorkerAction) returns (Error);
+}
+
+message EmptyMessage
+{
+}
+
+message StatusMessage
+{
+
+}
+
+message WorkerAction
+{
+	WorkerMessage worker = 1;
+	Action actionType = 2;
+}
+
+message WorkerMessage
+{
+	int32 Id = 1;
+	string LastName = 2;
+	string FirstName = 3;
+	string MiddleName = 4;
+	int64 Birthday = 5;
+	Sex Sex = 6;
+	bool HaveChildren = 7;
+}
+
+message ListMessage {
+  repeated WorkerMessage worker = 1;
+}
+
+message WorkerResponse {
+  ListMessage workers = 1;
+  Error error = 2;
+}
+
+//Пол
+enum Sex {
+	DefaultSex = 0;
+	Male = 1;
+	Female = 2;
+}
+
+enum Action {
+	DefaultAction = 0;
+	Create = 1;
+	Update = 2;
+	Delete = 3;
+}
+
+enum Error {
+	NoError = 0;
+	Fail = 1;
+}
