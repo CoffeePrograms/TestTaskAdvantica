@@ -1,4 +1,4 @@
-# WpfTestTaskAdvantica
+# Тестовое задание
 
 ## Структура
 - LibProto — библиотека с контрактом gRPC.
